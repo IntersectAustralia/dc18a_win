@@ -1,4 +1,6 @@
-Set oShell = CreateObject ("Wscript.Shell") 
+Set oShell = CreateObject ("WScript.Shell")
+Set objNet = CreateObject ("WScript.NetWork")
+ 
 Dim strCmd
-strCmd = "%ComSpec% /c """ & "%ProgramFiles(x86)%\Internet Explorer\iexplore.exe" & """ -k http://172.16.4.78:3000"
+strCmd = "%ComSpec% /c """ & "%ProgramFiles(x86)%\Internet Explorer\iexplore.exe" & """ -k http://172.16.4.78:3000/user/" & objNet.UserName 
 oShell.Run strCmd, 0, false
